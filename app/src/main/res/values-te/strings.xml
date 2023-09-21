@@ -3,4 +3,8 @@
     <string name="app_name">AndroidAssignments</string>
     <string name="hello_message">శుభోదయం</string>
     <string name="ButtonText">ఇక్కడ నొక్కండి</string>
+    <string name="TextView1">లాగిన్</string>
+    <string name="EditText1">లాగిన్ పేరు</string>
+    <string name="TextView2">పాస్వర్డ్</string>
+    <string name="SwitchText">ఇది ఎం చేస్తుంది?          </string>
 </resources>
