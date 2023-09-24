@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AndroidAssignments</string>
-    <string name="hello_message">శుభోదయం</string>
-    <string name="ButtonText">ఇక్కడ నొక్కండి</string>
-    <string name="TextView1">లాగిన్</string>
-    <string name="EditText1">లాగిన్ పేరు</string>
-    <string name="TextView2">పాస్వర్డ్</string>
-    <string name="SwitchText">ఇది ఎం చేస్తుంది?          </string>
+    <string name="hello_messageSai">శుభోదయం</string>
+    <string name="ButtonTextSai">ఇక్కడ నొక్కండి</string>
+    <string name="TextView1Sai">లాగిన్</string>
+    <string name="EditText1Sai">లాగిన్ పేరు</string>
+    <string name="TextView2Sai">పాస్వర్డ్</string>
+    <string name="SwitchTextSai">ఇది ఎం చేస్తుంది?</string>
+    <string name="NextSai">తరువాత</string>
+    <string name="BackSai">వెనుకకు</string>
+    <string name="HomeSai">హోమ్</string>
 </resources>
