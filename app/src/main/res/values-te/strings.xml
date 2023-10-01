@@ -10,4 +10,9 @@
     <string name="NextSai">తరువాత</string>
     <string name="BackSai">వెనుకకు</string>
     <string name="HomeSai">హోమ్</string>
+    <string name="LoginbtnSai">లాగిన్</string>
+    <string name="ok">ఓకే</string>
+    <string name="cancel">కాన్సుల్</string>
+    <string name="dialogMessage">ఆక్టివిటీ ఆపేయాల?</string>
+    <string name="dialogTitle">గమనిక</string>
 </resources>

@@ -18,7 +18,7 @@
         android:gravity="fill" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkBoxSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CheckBox"
@@ -26,7 +26,7 @@
         android:gravity="fill" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/SwitchTextSai"
@@ -38,34 +38,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/ic_menu_camera"
+        android:onClick="onLoginClickSai"
         android:layout_columnWeight="1"
         android:gravity="fill" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="502dp"
-        android:layout_columnWeight="1"
-        android:gravity="fill" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="502dp"
-        android:layout_columnWeight="1"
-        android:gravity="fill" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/BackSai"
-        android:layout_columnWeight="1" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/HomeSai"
-        android:layout_columnWeight="1" />
-
 
 </GridLayout>

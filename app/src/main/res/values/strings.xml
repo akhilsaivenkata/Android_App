@@ -9,4 +9,9 @@
     <string name="NextSai">Next</string>
     <string name="BackSai">Back</string>
     <string name="HomeSai">Home</string>
+    <string name="LoginbtnSai">Login</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="dialogMessage">Do you want to end this Activity?</string>
+    <string name="dialogTitle">Attention</string>
 </resources>
