@@ -18,11 +18,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        utility.print(this,"debug","LoginActivity","Debugging message: You are in LoginActivity.");
 
-        utility.print(this, "Debugging message: You are in LoginActivity.");
+        //utility.print(this, "Debugging message: You are in LoginActivity.");
 
-        //Button nextToListSai = findViewById(R.id.btnGoToListSai);
-        //Button backToMainSai = findViewById(R.id.btnGoToMainSai);
         Button loginButtonSai = findViewById(R.id.LoginbtnSai);
 
         EditText emailEditTextSai = findViewById(R.id.editTextText);
@@ -31,23 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         String savedEmail = sharedPreferences.getString("DefaultEmail", defaultEmail);
         emailEditTextSai.setText(savedEmail);
 
-        /*nextToListSai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to LoginActivity
-                Intent intent = new Intent(LoginActivity.this, ListItemsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        backToMainSai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to LoginActivity
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });*/
     }
 
     public void onLoginClickSai(View view) {
@@ -58,9 +40,11 @@ public class LoginActivity extends AppCompatActivity {
         String passwordSai = passwordEditTextSai.getText().toString();
 
         if (emailSai.isEmpty() || passwordSai.isEmpty() ){
-            Toast.makeText(this, "Both email and password are required!!!.", Toast.LENGTH_SHORT).show();
+            utility.print(this,"toast","LoginActivity","Both email and password are required!!!.");
+            //Toast.makeText(this, "Both email and password are required!!!.", Toast.LENGTH_SHORT).show();
         } else if (!isEmailValidSai(emailSai)) {
-            Toast.makeText(this, "email should be in valid format!!!.", Toast.LENGTH_SHORT).show();
+            utility.print(this,"toast","LoginActivity","email should be in valid format!!!.");
+            //Toast.makeText(this, "email should be in valid format!!!.", Toast.LENGTH_SHORT).show();
         } else {
             // Save the email address to SharedPreferences
             SharedPreferences sharedPreferencesSai = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -87,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         // Your code to start any necessary components or operations
+        utility.print(this,"debug","LoginActivity","In onStart method of Login Activity");
         Log.i("LoginActivity","In onStart method of Login Activity");
     }
 
@@ -94,41 +79,47 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         // Your code to resume any paused operations or refresh the UI
-        Log.i("LoginActivity","In onResume method of Login Activity");
+        utility.print(this,"debug","LoginActivity","In onResume method of Login Activity");
+        //Log.i("LoginActivity","In onResume method of Login Activity");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         // Your code to pause or save state if needed
-        Log.i("LoginActivity","In onPause method of Login Activity");
+        utility.print(this,"debug","LoginActivity","In onPause method of Login Activity");
+        //Log.i("LoginActivity","In onPause method of Login Activity");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         // Your code to stop any ongoing processes or cleanup
-        Log.i("LoginActivity","In onStop method of Login Activity");
+        utility.print(this,"debug","LoginActivity","In onStop method of Login Activity");
+        //Log.i("LoginActivity","In onStop method of Login Activity");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         // Your cleanup code before the activity is destroyed
-        Log.i("LoginActivity","In onDestroyy method of Login Activity");
+        utility.print(this,"debug","LoginActivity","In onDestroyy method of Login Activity");
+        //Log.i("LoginActivity","In onDestroyy method of Login Activity");
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         // Your code to save instance state if needed
-        Log.i("LoginActivity","In onSaveInstanceState method of Login Activity");
+        utility.print(this,"debug","LoginActivity","In onSaveInstanceState method of Login Activity");
+        //Log.i("LoginActivity","In onSaveInstanceState method of Login Activity");
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         // Your code to restore instance state if needed
-        Log.i("LoginActivity","In onRestoreInstanceState method of Login Activity");
+        utility.print(this,"debug","LoginActivity","In onRestoreInstanceState method of Login Activity");
+        //Log.i("LoginActivity","In onRestoreInstanceState method of Login Activity");
     }
 }

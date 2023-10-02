@@ -34,7 +34,7 @@ public class ListItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
-        utility.print(this, "Debugging message: You are in ListItemsActivity.");
+        utility.print(this,"debug","ListItemsActivity" ,"Debugging message: You are in ListItemsActivity.");
         imageButtonSai = findViewById(R.id.imageButton);
         imageButtonSai.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,24 +133,6 @@ public class ListItemsActivity extends AppCompatActivity {
             }
         }
     }
-       /*backToLoginSai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to LoginActivity
-                Intent intent = new Intent(ListItemsActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
-        /*homeToMainSai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate to LoginActivity
-                Intent intent = new Intent(ListItemsActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-    }*/
 
     private void PermissionDeniedMessageDisplay() {
         // Show a message to the user indicating that the camera permission is required.
@@ -161,48 +143,55 @@ public class ListItemsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         // Your code to start any necessary components or operations
-        Log.i("ListItemActivity","In onStart method of ListItemActivity");
+        utility.print(this,"debug","ListItemsActivity" ,"In onStart method of ListItemActivity");
+        //Log.i("ListItemActivity","In onStart method of ListItemActivity");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         // Your code to resume any paused operations or refresh the UI
-        Log.i("ListItemActivity","In onResume method of ListItemActivity");
+        utility.print(this,"debug","ListItemsActivity" ,"In onResume method of ListItemActivity");
+        //Log.i("ListItemActivity","In onResume method of ListItemActivity");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         // Your code to pause or save state if needed
-        Log.i("ListItemActivity","In onPause method of ListItemActivity");
+        utility.print(this,"debug","ListItemsActivity" ,"In onPause method of ListItemActivity");
+        //Log.i("ListItemActivity","In onPause method of ListItemActivity");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         // Your code to stop any ongoing processes or cleanup
-        Log.i("ListItemActivity","In onStop method of ListItemActivity");
+        utility.print(this,"debug","ListItemsActivity" ,"In onStop method of ListItemActivity");
+        //Log.i("ListItemActivity","In onStop method of ListItemActivity");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         // Your cleanup code before the activity is destroyed
-        Log.i("ListItemActivity","In onDestroy method of ListItemActivity");
+        utility.print(this,"debug","ListItemsActivity" ,"In onDestroy method of ListItemActivity");
+        //Log.i("ListItemActivity","In onDestroy method of ListItemActivity");
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         // Your code to save instance state if needed
-        Log.i("ListItemActivity","In onSaveInstanceState method of ListItemActivity");
+        utility.print(this,"debug","ListItemsActivity" ,"In onSaveInstanceState method of ListItemActivity");
+        //Log.i("ListItemActivity","In onSaveInstanceState method of ListItemActivity");
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         // Your code to restore instance state if needed
-        Log.i("ListItemActivity","In onRestoreInstanceState method of ListItemActivity");
+        utility.print(this,"debug","ListItemsActivity" ,"In onRestoreInstanceState method of ListItemActivity");
+        //Log.i("ListItemActivity","In onRestoreInstanceState method of ListItemActivity");
     }
 }

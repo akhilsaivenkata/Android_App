@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button nextToListItemsSai = findViewById(R.id.button);
-        utility.print(this, "Debugging message: You are in MainActivity.");
+        utility.print(this,"debug","MainActivity","Debugging message: You are in MainActivity.");
+
+        //utility.print(this,"Debugging message: You are in MainActivity.");
 
         nextToListItemsSai.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
             // Handle the result from ListItemsActivity
             if (resultCode == RESULT_OK) {
                 // The activity returned successfully
-                Log.i("MainActivity", "Returned to MainActivity onActivityResult");
+                //Log.i("MainActivity", "Returned to MainActivity onActivityResult");
+                utility.print(this,"debug","MainActivity","Returned to MainActivity onActivityResult");
+
                 String messagePassedSai = data.getStringExtra("Response");
 
                 if (messagePassedSai != null) {
@@ -52,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             } else {
                 // The activity may have been canceled or encountered an error
-                Log.i("MainActivity", "ListItemsActivity did not return successfully");
+                utility.print(this,"debug","MainActivity","ListItemsActivity did not return successfully");
+                //Log.i("MainActivity", "ListItemsActivity did not return successfully");
             }
         }
     }
@@ -61,48 +66,55 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         // Your code to start any necessary components or operations
-        Log.i("MainActivity","In onStart method of Main Activity");
+        utility.print(this,"debug","MainActivity","In onStart method of Main Activity");
+        //Log.i("MainActivity","In onStart method of Main Activity");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         // Your code to resume any paused operations or refresh the UI
-        Log.i("MainActivity","In onResume method of Main Activity");
+        utility.print(this,"debug","MainActivity","In onResume method of Main Activity");
+        //Log.i("MainActivity","In onResume method of Main Activity");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         // Your code to pause or save state if needed
-        Log.i("MainActivity","In onPause method of Main Activity");
+        utility.print(this,"debug","MainActivity","In onPause method of Main Activity");
+        //Log.i("MainActivity","In onPause method of Main Activity");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         // Your code to stop any ongoing processes or cleanup
-        Log.i("MainActivity","In onStop method of Main Activity");
+        utility.print(this,"debug","MainActivity","In onStop method of Main Activity");
+        //Log.i("MainActivity","In onStop method of Main Activity");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         // Your cleanup code before the activity is destroyed
-        Log.i("MainActivity","In onDestriy method of Main Activity");
+        utility.print(this,"debug","MainActivity","In onDestriy method of Main Activity");
+        //Log.i("MainActivity","In onDestriy method of Main Activity");
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         // Your code to save instance state if needed
-        Log.i("MainActivity","In onSaveInstanceState method of Main Activity");
+        utility.print(this,"debug","MainActivity","In onSaveInstanceState method of Main Activity");
+        //Log.i("MainActivity","In onSaveInstanceState method of Main Activity");
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         // Your code to restore instance state if needed
-        Log.i("MainActivity","In onRestoreInstanceState method of Main Activity");
+        utility.print(this,"debug","MainActivity","In onRestoreInstanceState method of Main Activity");
+        //Log.i("MainActivity","In onRestoreInstanceState method of Main Activity");
     }
 }
