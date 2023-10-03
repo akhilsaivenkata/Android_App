@@ -12,6 +12,5 @@ public class utility {
         if(type=="debug"){
             Log.d(tag,message);
         }
-
     }
 }
