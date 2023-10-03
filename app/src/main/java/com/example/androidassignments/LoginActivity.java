@@ -40,10 +40,10 @@ public class LoginActivity extends AppCompatActivity {
         String passwordSai = passwordEditTextSai.getText().toString();
 
         if (emailSai.isEmpty() || passwordSai.isEmpty() ){
-            utility.print(this,"toast","LoginActivity","Both email and password are required!!!.");
+            utility.print(this,"toast","LoginActivity",getResources().getString(R.string.emailPassToast));
             //Toast.makeText(this, "Both email and password are required!!!.", Toast.LENGTH_SHORT).show();
         } else if (!isEmailValidSai(emailSai)) {
-            utility.print(this,"toast","LoginActivity","email should be in valid format!!!.");
+            utility.print(this,"toast","LoginActivity", getResources().getString(R.string.emailFormat));
             //Toast.makeText(this, "email should be in valid format!!!.", Toast.LENGTH_SHORT).show();
         } else {
             // Save the email address to SharedPreferences

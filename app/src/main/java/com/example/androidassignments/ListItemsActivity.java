@@ -56,7 +56,7 @@ public class ListItemsActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // Create a message based on the switch's state
-                CharSequence text = isChecked ? "Switch is On" : "Switch is Off";
+                CharSequence text = isChecked ? getResources().getString(R.string.switchon) : getResources().getString(R.string.switchoff);
                 int duration = isChecked ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG;
 
                 // Create and display the Toast message
@@ -79,13 +79,14 @@ public class ListItemsActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int id) {
                                     // User clicked OK button, finish the activity
                                     Intent resultIntent = new Intent(  );
-                                    resultIntent.putExtra("Response", "Here is my response");
+                                    resultIntent.putExtra("Response", getResources().getString(R.string.response));
                                     setResult(Activity.RESULT_OK, resultIntent);
                                     finish();
                                 }
                             })
                             .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
+                                    checkBoxSai.setChecked(false);
                                 }
                             })
                             .show();

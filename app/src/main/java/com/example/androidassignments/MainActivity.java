@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (messagePassedSai != null) {
                     // Display a Toast with the retrieved message
-                    String toastMessage = "ListItemsActivity passed: " + messagePassedSai;
+                    String toastMessage = getResources().getString(R.string.LIAP) + messagePassedSai;
                     int duration = Toast.LENGTH_SHORT; // You can use LENGTH_LONG if needed
 
                     Toast toast = Toast.makeText(getApplicationContext(), toastMessage, duration);

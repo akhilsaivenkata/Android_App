@@ -10,9 +10,17 @@
     <string name="NextSai">తరువాత</string>
     <string name="BackSai">వెనుకకు</string>
     <string name="HomeSai">హోమ్</string>
+    <string name="RadioButton">రేడియో బటన్</string>
+    <string name="CheckBox">చెక్బోస్</string>
     <string name="LoginbtnSai">లాగిన్</string>
     <string name="ok">ఓకే</string>
     <string name="cancel">కాన్సుల్</string>
     <string name="dialogMessage">ఆక్టివిటీ ఆపేయాల?</string>
     <string name="dialogTitle">గమనిక</string>
+    <string name="switchon">స్విచ్ ఐస్ ఆన్</string>
+    <string name="switchoff">స్విచ్ ఐస్ ఆఫ్</string>
+    <string name="emailPassToast">బోథ్ ఇమెయిల్ అండ్ పాస్వర్డ్ అర్ రిక్విరెడ్!!!.</string>
+    <string name="emailFormat">ఇమెయిల్ షౌల్ద్ బె ఇన్ వలీద్ ఫార్మటు!!!.</string>
+    <string name="response">హియర్ ఇస్ మై రెస్పాన్స్</string>
+    <string name="LIAP">లిస్టిటెంససీటివిటీ పస్సెద్:</string>
 </resources>

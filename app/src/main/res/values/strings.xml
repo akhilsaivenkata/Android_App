@@ -9,9 +9,17 @@
     <string name="NextSai">Next</string>
     <string name="BackSai">Back</string>
     <string name="HomeSai">Home</string>
+    <string name="RadioButton">RadioButton</string>
+    <string name="CheckBox">CheckBox</string>
     <string name="LoginbtnSai">Login</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="dialogMessage">Do you want to end this Activity?</string>
     <string name="dialogTitle">Attention</string>
+    <string name="switchon">Switch is On</string>
+    <string name="switchoff">Switch is off</string>
+    <string name="emailPassToast">Both email and password are required!!!.</string>
+    <string name="emailFormat">email should be in valid format!!!.</string>
+    <string name="response">Here is my response</string>
+    <string name="LIAP">ListItemsActivity passed: </string>
 </resources>

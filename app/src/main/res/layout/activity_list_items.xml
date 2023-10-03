@@ -13,7 +13,7 @@
         android:id="@+id/radioButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RadioButton"
+        android:text="@string/RadioButton"
         android:layout_columnWeight="1"
         android:gravity="fill" />
 
@@ -21,7 +21,7 @@
         android:id="@+id/checkBoxSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:text="@string/CheckBox"
         android:layout_columnWeight="1"
         android:gravity="fill" />
 
