@@ -62,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void chatButtonStartOnClick(View v){
+        utility.print(this,"debug","MainActivity","User clicked Start Chat");
+        Intent intent = new Intent(MainActivity.this, ChatWindow.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
