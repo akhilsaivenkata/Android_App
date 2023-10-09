@@ -2,11 +2,13 @@ package com.example.androidassignments;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
 import com.example.androidassignments.utils.utility;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+
 
 import com.example.androidassignments.utils.utility;
 
@@ -29,6 +32,7 @@ public class ChatWindow extends AppCompatActivity {
     private Button sendBtn;
     private ArrayList<String> msgsSai;
     private ArrayAdapter<String> chatAdapter;
+    private Toolbar toolbarSai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,25 +41,19 @@ public class ChatWindow extends AppCompatActivity {
 
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
         //getSupportActionBar().setDisplayShowCustomEnabled(true);
-        //getSupportActionBar().setCustomView(R.layout.toolbar);
-        ActionBar actionBar = getSupportActionBar();
+        toolbarSai= findViewById(R.id.toolBarSai);
+        setSupportActionBar(toolbarSai);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(getResources().getString(R.string.chatAct));
+        /*ActionBar actionBar = getSupportActionBar();
+
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayShowCustomEnabled(true);
+            Log.i("ChatActivity",getResources().getString(R.string.chatAct));
+            actionBar.setTitle(getResources().getString(R.string.chatAct));
             actionBar.setCustomView(R.id.toolBarSai);
-        }
-
-        // Configure the back button click behavior
-        //ImageButton prev = findViewById(R.id.prevBtnSai);
-
-        /*prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavUtils.navigateUpFromSameTask(ChatWindow.this);
-            }
-        });*/
-
-        // Other initialization code for ChatWindowActivity
+        }*/
 
         // Here I am initializing UI components
         listViewChat = findViewById(R.id.listViewSai);
@@ -97,7 +95,7 @@ public class ChatWindow extends AppCompatActivity {
         NavUtils.navigateUpFromSameTask(this);
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -106,7 +104,7 @@ public class ChatWindow extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     private class ChatAdapter extends ArrayAdapter<String> {
 

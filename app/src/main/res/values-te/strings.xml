@@ -15,6 +15,9 @@
     <string name="LoginbtnSai">లాగిన్</string>
     <string name="chatButtonSai">చాట్ స్టార్ట్!!!!</string>
     <string name="Sendchey">సెండ్</string>
+    <string name="chatAct">చాట్ ఆక్టివిటీ</string>
+    <string name="MainAct">మెయిన్ ఆక్టివిటీ</string>
+    <string name="ListAct">లిస్ట్ ఐటమ్స్ ఆక్టివిటీ</string>
     <string name="ok">ఓకే</string>
     <string name="cancel">కాన్సుల్</string>
     <string name="dialogMessage">ఆక్టివిటీ ఆపేయాల?</string>

@@ -2,6 +2,7 @@ package com.example.androidassignments;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
 import com.example.androidassignments.utils.utility;
@@ -15,17 +16,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 10;
+    private Toolbar toolbarSai;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
-            actionBar.setDisplayShowCustomEnabled(true);
-            actionBar.setCustomView(R.id.toolBarSai);
-        }
+        toolbarSai= findViewById(R.id.toolBarSai);
+        setSupportActionBar(toolbarSai);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(getResources().getString(R.string.MainAct));
 
         Button nextToListItemsSai = findViewById(R.id.button);
         utility.print(this,"debug","MainActivity","Debugging message: You are in MainActivity.");
@@ -49,16 +49,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle the click event here
         NavUtils.navigateUpFromSameTask(this);
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

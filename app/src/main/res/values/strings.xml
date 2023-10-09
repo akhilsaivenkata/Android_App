@@ -14,6 +14,9 @@
     <string name="LoginbtnSai">Login</string>
     <string name="chatButtonSai">Start Chat!!!!</string>
     <string name="Sendchey">Send</string>
+    <string name="chatAct">ChatActivity</string>
+    <string name="MainAct">MainActivity</string>
+    <string name="ListAct">ListItemsActivity</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="dialogMessage">Do you want to end this Activity?</string>
