@@ -2,9 +2,11 @@ package com.example.androidassignments;
 
 import com.example.androidassignments.utils.utility;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NavUtils;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
@@ -16,6 +18,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -34,6 +37,14 @@ public class ListItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowCustomEnabled(true);
+            actionBar.setCustomView(R.id.toolBarSai);
+        }
+
         utility.print(this,"debug","ListItemsActivity" ,"Debugging message: You are in ListItemsActivity.");
         imageButtonSai = findViewById(R.id.imageButton);
         imageButtonSai.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +105,21 @@ public class ListItemsActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void onPrevButtonClick(View view) {
+        // Handle the click event here
+        NavUtils.navigateUpFromSameTask(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

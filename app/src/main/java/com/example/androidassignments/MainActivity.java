@@ -1,10 +1,14 @@
 package com.example.androidassignments;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+
 import com.example.androidassignments.utils.utility;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,6 +19,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowCustomEnabled(true);
+            actionBar.setCustomView(R.id.toolBarSai);
+        }
+
         Button nextToListItemsSai = findViewById(R.id.button);
         utility.print(this,"debug","MainActivity","Debugging message: You are in MainActivity.");
 
@@ -31,6 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void onPrevButtonClick(View view) {
+        // Handle the click event here
+        NavUtils.navigateUpFromSameTask(this);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
