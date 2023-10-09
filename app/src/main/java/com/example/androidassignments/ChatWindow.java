@@ -1,7 +1,7 @@
 package com.example.androidassignments;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.androidassignments.utils.utility;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.androidassignments.utils.utility;
 
 import java.util.ArrayList;
 
@@ -37,8 +39,8 @@ public class ChatWindow extends AppCompatActivity {
         msgsSai = new ArrayList<>();
         //chatAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, msgsSai);
 
-        chatAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, msgsSai);
-
+        /////chatAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, msgsSai);
+        chatAdapter = new ChatAdapter(this,0,msgsSai);
         listViewChat.setAdapter(chatAdapter);
 
 
@@ -65,18 +67,22 @@ public class ChatWindow extends AppCompatActivity {
 
     private class ChatAdapter extends ArrayAdapter<String> {
 
-        public ChatAdapter(Context ctx) {
-            super(ctx, 0);
+        public ChatAdapter(Context ctx,int resource, ArrayList<String> data) {
+
+            /////super(ctx, 0);
+            super(ctx,0,data);
         }
 
         @Override
         public int getCount() {
-            return msgsSai.size();
+            /////return msgsSai.size();
+            return super.getCount();
         }
 
         @Override
         public String getItem(int position) {
-            return msgsSai.get(position);
+            /////return msgsSai.get(position);
+            return super.getItem(position);
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -86,11 +92,14 @@ public class ChatWindow extends AppCompatActivity {
 
             if (position % 2 == 0) {
                 result = inflater.inflate(R.layout.chat_row_incoming, null);
+                utility.print(ChatWindow.this,"debug","ChatWindowActivity","Inside incoming chat");
             } else {
                 result = inflater.inflate(R.layout.chat_row_outgoing, null);
+                utility.print(ChatWindow.this,"debug","ChatWindowActivity","Inside outgoing chat");
             }
 
-            TextView message = (TextView) result.findViewById(R.id.editTextMsgSai);
+            //TextView message = (TextView) result.findViewById(R.id.editTextMsgSai);
+            TextView message = (TextView) result.findViewById(R.id.message_text1);
             message.setText(getItem(position)); // get the string at position
             return result;
         }
