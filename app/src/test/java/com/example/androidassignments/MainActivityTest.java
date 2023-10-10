@@ -1,3 +1,5 @@
 package com.example.androidassignments;
-public class LoginActivityTest {
+
+public class MainActivityTest {
+
 }
