@@ -27,7 +27,8 @@
         <activity
             android:name=".ChatWindow"
             android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
 
         <activity
             android:name=".LoginActivity"
@@ -41,11 +42,15 @@
         <activity
             android:name=".MainActivity"
             android:parentActivityName=".LoginActivity"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".ListItemsActivity"
             android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false" >
+
+        </activity>
     </application>
 
 </manifest>

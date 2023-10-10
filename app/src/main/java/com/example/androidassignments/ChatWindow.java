@@ -27,12 +27,12 @@ import java.util.ArrayList;
 
 public class ChatWindow extends AppCompatActivity {
 
-    private ListView listViewChat;
-    private EditText editTextMsg;
-    private Button sendBtn;
-    private ArrayList<String> msgsSai;
-    private ArrayAdapter<String> chatAdapter;
-    private Toolbar toolbarSai;
+    ListView listViewChat;
+    EditText editTextMsg;
+    Button sendBtn;
+    ArrayList<String> msgsSai;
+    ArrayAdapter<String> chatAdapter;
+    Toolbar toolbarSai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +106,7 @@ public class ChatWindow extends AppCompatActivity {
         }
     }*/
 
-    private class ChatAdapter extends ArrayAdapter<String> {
+    protected class ChatAdapter extends ArrayAdapter<String> {
 
         public ChatAdapter(Context ctx,int resource, ArrayList<String> data) {
 

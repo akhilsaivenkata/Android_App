@@ -14,6 +14,10 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
+    EditText emailEditTextSai;
+    EditText passwordEditTextSai;
+    Button loginButtonSai;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +26,10 @@ public class LoginActivity extends AppCompatActivity {
 
         //utility.print(this, "Debugging message: You are in LoginActivity.");
 
-        Button loginButtonSai = findViewById(R.id.LoginbtnSai);
+        loginButtonSai = findViewById(R.id.LoginbtnSai);
 
-        EditText emailEditTextSai = findViewById(R.id.editTextText);
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        emailEditTextSai = findViewById(R.id.editTextText);
+        sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String defaultEmail = "exampless@gmail.com"; // Default email if not found in SharedPreferences
         String savedEmail = sharedPreferences.getString("DefaultEmail", defaultEmail);
         emailEditTextSai.setText(savedEmail);
@@ -34,9 +38,9 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginClickSai(View view) {
         // Get the email address from the email field
-        EditText emailEditTextSaii = findViewById(R.id.editTextText);
-        String emailSai = emailEditTextSaii.getText().toString();
-        EditText passwordEditTextSai = findViewById(R.id.editTextTextPassword);
+        emailEditTextSai = findViewById(R.id.editTextText);
+        String emailSai = emailEditTextSai.getText().toString();
+        passwordEditTextSai = findViewById(R.id.editTextTextPassword);
         String passwordSai = passwordEditTextSai.getText().toString();
 
         if (emailSai.isEmpty() || passwordSai.isEmpty() ){
