@@ -1,9 +1,11 @@
 package com.example.androidassignments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
@@ -71,7 +73,24 @@ public class TestToolbar extends AppCompatActivity {
             // Handle Choice 2
             Log.d("Toolbar", "Choice 2 selected");
             Snackbar.make(findViewById(R.id.action_twoSai), "You selected item 2", Snackbar.LENGTH_SHORT).show();
-            // You can start an activity or perform any desired action here
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.ToolDialog);
+            builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // User clicked OK button, finish the current activity
+                    finish();
+                }
+            });
+            builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // User cancelled the dialog, do nothing
+                }
+            });
+
+            // Create the AlertDialog and show it
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
             return true;
         } else if (id == R.id.action_threeSai) {
             // Handle Choice 3

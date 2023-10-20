@@ -18,6 +18,7 @@
     <string name="MainAct">MainActivity</string>
     <string name="ListAct">ListItemsActivity</string>
     <string name="Toolbar">Test toolbar</string>
+    <string name="ToolDialog">Do you want to go back?</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="dialogMessage">Do you want to end this Activity?</string>
