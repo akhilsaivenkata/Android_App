@@ -18,6 +18,7 @@
     <string name="chatAct">చాట్ ఆక్టివిటీ</string>
     <string name="MainAct">మెయిన్ ఆక్టివిటీ</string>
     <string name="ListAct">లిస్ట్ ఐటమ్స్ ఆక్టివిటీ</string>
+    <string name="Toolbar">టెస్ట్ టూల్బార్</string>
     <string name="ok">ఓకే</string>
     <string name="cancel">కాన్సుల్</string>
     <string name="dialogMessage">ఆక్టివిటీ ఆపేయాల?</string>

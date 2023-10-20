@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_oneSai"
+        android:title="Choice 1"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_twoSai"
+        android:title="Choice 2"
+        android:icon="@android:drawable/ic_dialog_alert"
+        android:orderInCategory="102"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_threeSai"
+        android:title="Choice 3"
+        android:icon="@android:drawable/ic_input_add"
+        android:orderInCategory="103"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/about_itemSai"
+        android:title="About"
+        app:showAsAction="never" />
+</menu>
