@@ -20,6 +20,10 @@
     <string name="ListAct">లిస్ట్ ఐటమ్స్ ఆక్టివిటీ</string>
     <string name="Toolbar">టెస్ట్ టూల్బార్</string>
     <string name="ToolDialog">డో యు వాంట్ తో గో బ్యాక్?</string>
+    <string name="Menu1">యు సెలెక్టెడ్ ఐటెం 1</string>
+    <string name="Menu2">యు సెలెక్టెడ్ ఐటెం 2</string>
+    <string name="Menu3">యు సెలెక్టెడ్ ఐటెం 3</string>
+    <string name="DialogMenuofthree">న్యూ మెసేజ్ తో డిస్ప్లే అస్ టచ్ ఆన్ మెనూ ఐటెం 1</string>
     <string name="ok">ఓకే</string>
     <string name="cancel">కాన్సుల్</string>
     <string name="dialogMessage">ఆక్టివిటీ ఆపేయాల?</string>
