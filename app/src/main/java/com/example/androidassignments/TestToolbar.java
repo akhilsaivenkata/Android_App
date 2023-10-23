@@ -40,14 +40,10 @@ public class TestToolbar extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-        //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_test_toolbar);
-        //appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "You can include Mail functionality also", Snackbar.LENGTH_LONG)
                         .setAnchorView(R.id.fab)
                         .setAction("Action", null).show();
             }
@@ -72,27 +68,27 @@ public class TestToolbar extends AppCompatActivity {
         if (id == R.id.action_oneSai) {
             Log.d("Toolbar", "Choice 1 selected");
             Snackbar.make(findViewById(R.id.action_oneSai), newMessage, Snackbar.LENGTH_SHORT).show();
-            // Handle Choice 1
+            // Handling Choice 1
             return true;
         } else if (id == R.id.action_twoSai) {
-            // Handle Choice 2
+            // Handling Choice 2
             Log.d("Toolbar", "Choice 2 selected");
             Snackbar.make(findViewById(R.id.action_twoSai), R.string.Menu2, Snackbar.LENGTH_SHORT).show();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.ToolDialog);
             builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    // User clicked OK button, finish the current activity
+                    // Clicked on ok, so finishing the current activity
                     finish();
                 }
             });
             builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    // User cancelled the dialog, do nothing
+                    // Doing nothing as user cancelled
                 }
             });
 
-            // Create the AlertDialog and show it
+            // i am creating and showing the custom dialog here
             AlertDialog dialog = builder.create();
             dialog.show();
 
@@ -105,7 +101,7 @@ public class TestToolbar extends AppCompatActivity {
             return true;
         } else if (id == R.id.about_itemSai) {
             // toast msg details
-            String versionInfo = "Version 1.0, by Sai Venkata Akhil";
+            String versionInfo = getResources().getString(R.string.About);
             Toast.makeText(this, versionInfo, Toast.LENGTH_SHORT).show();
             Log.d("Toolbar", "About item selected");
             return true;
@@ -115,18 +111,19 @@ public class TestToolbar extends AppCompatActivity {
     }
 
     private void showCustomDialog() {
-        // Create a custom dialog with your layout
+        // Inflating my custom dialog layout
         LayoutInflater inflater = getLayoutInflater();
         View dialogLayout = inflater.inflate(R.layout.custom_dialog_layout, null);
 
-        // Find the EditText view within the custom dialog layout
+
         EditText newMessageEditText = dialogLayout.findViewById(R.id.newMessageEditText);
 
-        // Create an AlertDialog
+        // I am here creating an AlertDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.custdial);
         builder.setView(dialogLayout);
 
-        // Set custom dialog actions
+        // Setting up custom dialog actions
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button in the custom dialog
@@ -139,15 +136,9 @@ public class TestToolbar extends AppCompatActivity {
             }
         });
 
-        // Create and show the custom dialog
+        // i am creating and showing the custom dialog here
         AlertDialog dialog = builder.create();
         dialog.show();
     }
 
-    /*@Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_test_toolbar);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
-    }*/
 }

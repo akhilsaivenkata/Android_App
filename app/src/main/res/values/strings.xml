@@ -23,6 +23,8 @@
     <string name="Menu2">You selected item 2</string>
     <string name="Menu3">You selected item 3</string>
     <string name="DialogMenuofthree">New Message to display as toast on menu item 1 </string>
+    <string name="custdial">Dialog on Button 1</string>
+    <string name="About">Version 1.0, by Sai Venkata Akhil</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="dialogMessage">Do you want to end this Activity?</string>

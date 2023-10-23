@@ -24,6 +24,8 @@
     <string name="Menu2">యు సెలెక్టెడ్ ఐటెం 2</string>
     <string name="Menu3">యు సెలెక్టెడ్ ఐటెం 3</string>
     <string name="DialogMenuofthree">న్యూ మెసేజ్ తో డిస్ప్లే అస్ టచ్ ఆన్ మెనూ ఐటెం 1</string>
+    <string name="About">వెర్షన్ 1.0, బై సాయి వెంకట అఖిల్</string>
+    <string name="custdial">డైలాగ్ ఆన్ బుట్టోన్ 1</string>
     <string name="ok">ఓకే</string>
     <string name="cancel">కాన్సుల్</string>
     <string name="dialogMessage">ఆక్టివిటీ ఆపేయాల?</string>

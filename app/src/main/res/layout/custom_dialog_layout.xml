@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        tools:srcCompat="@android:drawable/stat_notify_chat" />
+        android:src="@drawable/pika" />
 
     <EditText
         android:id="@+id/newMessageEditText"

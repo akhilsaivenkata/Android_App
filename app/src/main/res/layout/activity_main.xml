@@ -33,6 +33,7 @@
 
     <Button
         android:id="@+id/button"
+        style="@style/AllBtoStyleSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
@@ -47,6 +48,7 @@
 
     <Button
         android:id="@+id/chatBtnStartSai"
+        style="@style/AllBtoStyleSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
@@ -58,6 +60,7 @@
 
     <Button
         android:id="@+id/button7"
+        style="@style/AllBtoStyleSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
