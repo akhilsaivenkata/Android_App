@@ -6,7 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 
 import com.example.androidassignments.utils.utility;
+
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,38 +37,37 @@ public class ChatWindow extends AppCompatActivity {
     ArrayList<String> msgsSai;
     ArrayAdapter<String> chatAdapter;
     Toolbar toolbarSai;
+    private ChatDatabaseHelper databaseHelper; // Add a field for the database helper
+    private SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
 
-        //getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //getSupportActionBar().setDisplayShowCustomEnabled(true);
+
         toolbarSai= findViewById(R.id.toolBarSai);
         setSupportActionBar(toolbarSai);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(getResources().getString(R.string.chatAct));
-        /*ActionBar actionBar = getSupportActionBar();
-
-        if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
-            actionBar.setDisplayShowCustomEnabled(true);
-            Log.i("ChatActivity",getResources().getString(R.string.chatAct));
-            actionBar.setTitle(getResources().getString(R.string.chatAct));
-            actionBar.setCustomView(R.id.toolBarSai);
-        }*/
 
         // Here I am initializing UI components
         listViewChat = findViewById(R.id.listViewSai);
         editTextMsg = findViewById(R.id.editTextMsgSai);
         sendBtn = findViewById(R.id.btnSendSai);
-
-        // Here I am initializing the chat messages and I am setting up an Adaptor
         msgsSai = new ArrayList<>();
-        //chatAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, msgsSai);
 
-        /////chatAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, msgsSai);
+        chatAdapter = new ChatAdapter(this, 0, msgsSai);
+        listViewChat.setAdapter(chatAdapter);
+
+        //I am creating an instance of chatdatabasehelper and writable database
+        databaseHelper = new ChatDatabaseHelper(this);
+        database = databaseHelper.getWritableDatabase();
+
+        // I am retrieving existing chat messages from the database
+        loadChatMessagesFromDatabase();
+
+
         chatAdapter = new ChatAdapter(this,0,msgsSai);
         listViewChat.setAdapter(chatAdapter);
 
@@ -76,35 +79,67 @@ public class ChatWindow extends AppCompatActivity {
                 // Get the text from the EditText field
                 String message = editTextMsg.getText().toString().trim();
 
+
                 if (!message.isEmpty()) {
+                    ContentValues values = new ContentValues();
+                    values.put(ChatDatabaseHelper.KEY_MESSAGE, message);
+                    long newRowId = database.insert(ChatDatabaseHelper.TABLE_NAME, null, values);
+                    if (newRowId != -1) {
+                        Log.i("ChatWindowActivity", "Inserted new message into the database with ID: " + newRowId);
+                    } else {
+                        Log.e("ChatWindowActivity", "Failed to insert new message into the database");
+                    }
                     // here it's adding msg to ArrayList
                     msgsSai.add("You: " + message);
 
                     // Telling adapter that the data has changed
                     chatAdapter.notifyDataSetChanged();
 
-                    // Clear the EditText field
+                    // I'm clearing the EditText field
                     editTextMsg.getText().clear();
                 }
             }
         });
     }
 
+    private void loadChatMessagesFromDatabase() {
+        //ArrayList<String> msgsSai = new ArrayList<>();
+        msgsSai.clear();
+        // Define the table name and columns
+        String tableName = ChatDatabaseHelper.TABLE_NAME;
+        String[] columns = {ChatDatabaseHelper.KEY_MESSAGE};
+
+        // Query the database to retrieve chat messages
+        Cursor cursor = database.query(tableName, columns, null, null, null, null, null);
+
+        // Log the column count and column names
+        Log.i("ChatWindowActivity", "Cursor's column count = " + cursor.getColumnCount());
+        for (int i = 0; i < cursor.getColumnCount(); i++) {
+            Log.i("ChatWindowActivity", "Column Name: " + cursor.getColumnName(i));
+        }
+
+        // I am iterating through the cursor to retrieve chat msgs
+
+        if (cursor.moveToFirst()) {
+            do {
+                String message = cursor.getString(cursor.getColumnIndex(ChatDatabaseHelper.KEY_MESSAGE));
+                Log.i("ChatWindowActivity", "SQL MESSAGE: " + message);
+                msgsSai.add("You: " + message);
+            } while (cursor.moveToNext());
+        }
+
+        // I am updating the chatAdapter with retrieved messages
+        chatAdapter.notifyDataSetChanged();
+
+        // Close the cursor
+        cursor.close();
+    }
+
     public void onPrevButtonClick(View view) {
-        // Handle the click event here
+        // I'm  handling the click event here
         NavUtils.navigateUpFromSameTask(this);
     }
 
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
 
     protected class ChatAdapter extends ArrayAdapter<String> {
 
@@ -143,6 +178,16 @@ public class ChatWindow extends AppCompatActivity {
             TextView message = (TextView) result.findViewById(R.id.message_text1);
             message.setText(getItem(position)); // get the string at position
             return result;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // I'm closing the database if it's open
+        if (database != null && database.isOpen()) {
+            database.close();
         }
     }
 }
