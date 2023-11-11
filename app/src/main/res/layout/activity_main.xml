@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/forecastbtnSai"
+        style="@style/AllBtoStyleSai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="forecastButtonStartOnClick"
+        android:text="@string/forecastBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBarSai"
         android:layout_width="match_parent"
@@ -51,10 +63,10 @@
         style="@style/AllBtoStyleSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginBottom="155dp"
-        android:text="@string/chatButtonSai"
+        android:layout_marginStart="144dp"
+        android:layout_marginBottom="160dp"
         android:onClick="chatButtonStartOnClick"
+        android:text="@string/chatButtonSai"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -63,11 +75,11 @@
         style="@style/AllBtoStyleSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginBottom="80dp"
-        android:text="@string/Toolbar"
+        android:layout_marginStart="148dp"
+        android:layout_marginBottom="88dp"
         android:onClick="toolbarButtonStartOnClick"
+        android:text="@string/Toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,9 @@
     <string name="chatAct">ChatActivity</string>
     <string name="MainAct">MainActivity</string>
     <string name="ListAct">ListItemsActivity</string>
+    <string name="WeatherAct">WeatherForecastActivity</string>
     <string name="Toolbar">Test toolbar</string>
+    <string name="forecastBtn">Weather Forecast</string>
     <string name="ToolDialog">Do you want to go back?</string>
     <string name="Menu1">You selected item 1</string>
     <string name="Menu2">You selected item 2</string>

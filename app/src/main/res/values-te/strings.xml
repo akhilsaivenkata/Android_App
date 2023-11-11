@@ -18,7 +18,9 @@
     <string name="chatAct">చాట్ ఆక్టివిటీ</string>
     <string name="MainAct">మెయిన్ ఆక్టివిటీ</string>
     <string name="ListAct">లిస్ట్ ఐటమ్స్ ఆక్టివిటీ</string>
+    <string name="WeatherAct">వీధేర్ ఫోరేకాస్ట్ ఆక్టివిటీ</string>
     <string name="Toolbar">టెస్ట్ టూల్బార్</string>
+    <string name="forecastBtn">వాతావరణ సూచన</string>
     <string name="ToolDialog">డో యు వాంట్ తో గో బ్యాక్?</string>
     <string name="Menu1">యు సెలెక్టెడ్ ఐటెం 1</string>
     <string name="Menu2">యు సెలెక్టెడ్ ఐటెం 2</string>

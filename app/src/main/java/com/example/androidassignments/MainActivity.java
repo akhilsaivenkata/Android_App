@@ -91,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, TestToolbar.class);
         startActivity(intent);
     }
+    public void forecastButtonStartOnClick(View v){
+        utility.print(this,"debug","MainActivity","User clicked test tool bar");
+        Intent intent = new Intent(MainActivity.this, WeatherForecast.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onStart() {
