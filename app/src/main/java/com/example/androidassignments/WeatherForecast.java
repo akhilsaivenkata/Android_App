@@ -154,7 +154,7 @@ public class WeatherForecast extends AppCompatActivity {
                             Log.i("WeatherForecstActivity",iconUrl);
                             weatherBitmap = downloadImage(iconUrl);
 
-                            // Show progress for the weather icon attribute
+                            // Showing progress for the weather icon attribute
                             publishProgress(100);
                         }
                     }

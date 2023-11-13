@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             // Construct the API URL based on the selected city
             String apiUrl = getWeatherApiUrl(selectedCity);
 
-            // Navigate to the WeatherForecast activity and pass the API URL
+            // Navigating to the WeatherForecast activity and pass the API URL
             Intent intent = new Intent(MainActivity.this, WeatherForecast.class);
             intent.putExtra("weatherApiUrl", apiUrl);
             startActivity(intent);
