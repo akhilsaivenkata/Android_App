@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="cityArray">
+        <item>ottawa</item>
+        <item>toronto</item>
+        <item>waterloo</item>
+        <item>kitchener</item>
+        <item>windsor</item>
+        <item>alberta</item>
+        <item>vancouver</item>
+    </array>
+</resources>

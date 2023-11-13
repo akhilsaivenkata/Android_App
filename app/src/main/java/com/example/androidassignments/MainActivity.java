@@ -11,12 +11,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 10;
     private Toolbar toolbarSai;
+    private Spinner citySpinner;
+    private String selectedCity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +46,48 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        citySpinner = findViewById(R.id.citySpinner);
 
+        // Set up the ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.cityArray, // Updated to use cityArray
+                android.R.layout.simple_spinner_item
+        );
+
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Apply the adapter to the spinner
+        citySpinner.setAdapter(adapter);
+
+        // Set up the listener for item selections
+        citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // Handle the selected city
+                selectedCity = parentView.getItemAtPosition(position).toString().toLowerCase();
+                // You can do something with the selected city, such as storing it or displaying it.
+                // For now, let's just print it to the log.
+                Log.d("MainActivity", "Selected City: " + selectedCity);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Do nothing when nothing is selected
+            }
+        });
 
     }
 
     public void onPrevButtonClick(View view) {
         // Handle the click event here
         NavUtils.navigateUpFromSameTask(this);
+    }
+
+    private String getWeatherApiUrl(String city) {
+        String apiKey = "92c953df3fe2a545fd2f40bc6688bcc5";  // Replace with your actual API key
+        return "http://api.openweathermap.org/data/2.5/weather?q=" + city + ",ca&APPID=" + apiKey + "&mode=xml&units=metric";
     }
 
 
@@ -92,9 +132,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void forecastButtonStartOnClick(View v){
-        utility.print(this,"debug","MainActivity","User clicked test tool bar");
-        Intent intent = new Intent(MainActivity.this, WeatherForecast.class);
-        startActivity(intent);
+        if (selectedCity != null && !selectedCity.isEmpty()) {
+            // Construct the API URL based on the selected city
+            String apiUrl = getWeatherApiUrl(selectedCity);
+
+            // Navigate to the WeatherForecast activity and pass the API URL
+            Intent intent = new Intent(MainActivity.this, WeatherForecast.class);
+            intent.putExtra("weatherApiUrl", apiUrl);
+            startActivity(intent);
+        } else {
+            // Handle the case where no city is selected
+            Toast.makeText(MainActivity.this, "Please select a city first", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

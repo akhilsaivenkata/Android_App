@@ -40,12 +40,16 @@ public class WeatherForecast extends AppCompatActivity {
     private TextView textViewMaxTemperature;
     private ProgressBar progressBar;
 
-    private static final String API_KEY = "92c953df3fe2a545fd2f40bc6688bcc5";
+    private String apiUrl;
+
+    //private static final String API_KEY = "92c953df3fe2a545fd2f40bc6688bcc5";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_forecast);
+
+        apiUrl = getIntent().getStringExtra("weatherApiUrl");
 
         toolbarSai= findViewById(R.id.toolBarSai);
         setSupportActionBar(toolbarSai);
@@ -83,7 +87,7 @@ public class WeatherForecast extends AppCompatActivity {
 
         protected String doInBackground(String... args) {
             try {
-                String apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=92c953df3fe2a545fd2f40bc6688bcc5&mode=xml&units=metric";
+                //String apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=ottawa,ca&APPID=92c953df3fe2a545fd2f40bc6688bcc5&mode=xml&units=metric";
 
                 // Make HTTP request
                 URL url = new URL(apiUrl);
@@ -147,6 +151,7 @@ public class WeatherForecast extends AppCompatActivity {
                             // Build the URL for weather icon
                             iconUrl = "http://openweathermap.org/img/w/" + iconName + ".png";
                             // Download and set the weather icon
+                            Log.i("WeatherForecstActivity",iconUrl);
                             weatherBitmap = downloadImage(iconUrl);
 
                             // Show progress for the weather icon attribute
@@ -216,34 +221,7 @@ public class WeatherForecast extends AppCompatActivity {
             imageViewWeather.setImageBitmap(weatherBitmap);
         }
 
-        private void updateUI() {
-            // Update UI elements with the fetched weather data
-            // For example, set TextView texts, ImageView images, etc.
-            // Hide the ProgressBar when the data is ready
-            //ProgressBar progressBar = findViewById(R.id.progressBar);
-            //progressBar.setVisibility(View.INVISIBLE);
-            TextView minTempTextView = findViewById(R.id.textViewMinTemperature);
-            TextView maxTempTextView = findViewById(R.id.textViewMaxTemperature);
-            TextView currentTempTextView = findViewById(R.id.textViewCurrentTemperature);
 
-            if (minTemperature != null) {
-                minTempTextView.setText("Min Temperature: " + minTemperature + "°C");
-            }
-
-            if (maxTemperature != null) {
-                maxTempTextView.setText("Max Temperature: " + maxTemperature + "°C");
-            }
-
-            if (currentTemperature != null) {
-                currentTempTextView.setText("Current Temperature: " + currentTemperature + "°C");
-            }
-
-            // Update ImageView with the downloaded Bitmap
-            ImageView weatherImageView = findViewById(R.id.imageViewWeather);
-            if (weatherBitmap != null) {
-                weatherImageView.setImageBitmap(weatherBitmap);
-            }
-        }
     }
 
 }
