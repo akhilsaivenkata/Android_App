@@ -19,6 +19,12 @@
     <string name="MainAct">మెయిన్ ఆక్టివిటీ</string>
     <string name="ListAct">లిస్ట్ ఐటమ్స్ ఆక్టివిటీ</string>
     <string name="WeatherAct">వీధేర్ ఫోరేకాస్ట్ ఆక్టివిటీ</string>
+    <string name="CurrentTemp">ప్రస్తుత ఉష్ణోగ్రత: 25°C</string>
+    <string name="MinTemp">కనిష్ట ఉష్ణోగ్రత: 20°C</string>
+    <string name="MaxTemp">గరిష్ట ఉష్ణోగ్రత: 30°C</string>
+    <string name="CurrentTemp1">ప్రస్తుత ఉష్ణోగ్రత: </string>
+    <string name="MinTemp1">కనిష్ట ఉష్ణోగ్రత: </string>
+    <string name="MaxTemp1">గరిష్ట ఉష్ణోగ్రత: </string>
     <string name="Toolbar">టెస్ట్ టూల్బార్</string>
     <string name="forecastBtn">వాతావరణ సూచన</string>
     <string name="ToolDialog">డో యు వాంట్ తో గో బ్యాక్?</string>

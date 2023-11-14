@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="122dp"
         android:layout_marginTop="30dp"
-        android:text="Current Temperature: 25°C"
+        android:text="@string/CurrentTemp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewWeather" />
 
@@ -50,7 +50,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="133dp"
         android:layout_marginTop="17dp"
-        android:text="Min Temperature: 20°C"
+        android:text="@string/MinTemp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCurrentTemperature" />
 
@@ -62,7 +62,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="131dp"
         android:layout_marginTop="25dp"
-        android:text="Max Temperature: 30°C"
+        android:text="@string/MaxTemp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMinTemperature" />
 

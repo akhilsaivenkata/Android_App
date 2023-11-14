@@ -42,7 +42,6 @@ public class WeatherForecast extends AppCompatActivity {
 
     private String apiUrl;
 
-    //private static final String API_KEY = "92c953df3fe2a545fd2f40bc6688bcc5";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +58,7 @@ public class WeatherForecast extends AppCompatActivity {
         // Here I am finding ProgressBar in the layout using its ID
         progressBar = findViewById(R.id.progressBar);
 
-        // Set the visibility of the ProgressBar to View.VISIBLE
+        //visibility of the ProgressBar should be kept to View.VISIBLE
         progressBar.setVisibility(View.VISIBLE);
         
         imageViewWeather = findViewById(R.id.imageViewWeather);
@@ -95,37 +94,37 @@ public class WeatherForecast extends AppCompatActivity {
                 connection.setRequestMethod("GET");
                 connection.connect();
 
-                // Get the InputStream from the connection
+                // we need to get the InputStream from the connection
                 InputStream stream = connection.getInputStream();
 
-                // Parse the XML response
+                // I am parsing the XML response
                 XmlPullParserFactory xmlFactoryObject = XmlPullParserFactory.newInstance();
                 XmlPullParser parser = xmlFactoryObject.newPullParser();
                 parser.setInput(stream, null);
 
                 parseXml(parser); // Call a separate method to handle XML parsing
 
-                // Close the InputStream
+                // Closing the InputStream
                 stream.close();
 
-                // Check if the image is already present locally
+                // I need to check if the image is already present locally
                 if (!fileExistance(iconName + ".png")) {
-                    // Download the image and save it to local storage
+                    // I am downloading the image and saving it to local storage
                     weatherBitmap = downloadImage(iconUrl);
                     saveImageLocally(iconName, weatherBitmap);
                 } else {
-                    // Read the image from local storage
+                    // Reading the image from local storage
                     weatherBitmap = readImageLocally(iconName);
                     Log.i("ForecastQuery", "Image found locally: " + iconName);
                 }
 
-                // Show progress for the weather icon attribute
+                // Showing the  progress for the weather icon attribute
                 publishProgress(100);
 
-                // Return success message
+                // we can return success message
                 return "Success";
             } catch (Exception e) {
-                Log.e("ForecastQuery", "Error in doInBackground: " + e.getMessage());
+                Log.e("ForecastQuery", "Error in doInBackgroundMethod: " + e.getMessage());
                 return "Error";
             }
         }
@@ -143,15 +142,15 @@ public class WeatherForecast extends AppCompatActivity {
                             minTemperature = parser.getAttributeValue(null, "min");
                             maxTemperature = parser.getAttributeValue(null, "max");
 
-                            // Show progress for temperature attributes
+                            // I'm Showing the progress bar for temperature attributes
                             publishProgress(25, 50, 75);
                         } else if ("weather".equals(tagName)) {
-                            // Extract the "icon" attribute
+                            // extracting the "icon" attribute from the data
                             iconName = parser.getAttributeValue(null, "icon");
-                            // Build the URL for weather icon
+                            // I'm building the URL for weather icon
                             iconUrl = "http://openweathermap.org/img/w/" + iconName + ".png";
-                            // Download and set the weather icon
-                            Log.i("WeatherForecstActivity",iconUrl);
+                            // Setting up thr the weather icon and
+                            Log.i("WeatherForecastActivity",iconUrl);
                             weatherBitmap = downloadImage(iconUrl);
 
                             // Showing progress for the weather icon attribute
@@ -190,7 +189,7 @@ public class WeatherForecast extends AppCompatActivity {
                 image.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
                 outputStream.flush();
                 outputStream.close();
-                Log.i("ForecastQuery", "Image saved locally: " + iconName);
+                Log.i("ForecastQuery", "Image has been saved locally: " + iconName);
             } catch (Exception e) {
                 Log.e("ForecastQuery", "Error saving image locally: " + e.getMessage());
             }
@@ -201,7 +200,7 @@ public class WeatherForecast extends AppCompatActivity {
                 FileInputStream fis = openFileInput(iconName + ".png");
                 return BitmapFactory.decodeStream(fis);
             } catch (FileNotFoundException e) {
-                Log.e("ForecastQuery", "Error reading image locally: " + e.getMessage());
+                Log.e("ForecastQuery", "Error while reading image locally: " + e.getMessage());
                 return null;
             }
         }
@@ -213,11 +212,11 @@ public class WeatherForecast extends AppCompatActivity {
         }
 
         protected void onPostExecute(String result) {
-            // Update UI components with parsed data
+            // we are updating the UI components with parsed data here.
             progressBar.setVisibility(View.INVISIBLE);
-            textViewCurrentTemperature.setText("Current Temp: " + currentTemperature);
-            textViewMinTemperature.setText("Min Temp: " + minTemperature);
-            textViewMaxTemperature.setText("Max Temp: " + maxTemperature);
+            textViewCurrentTemperature.setText(getResources().getString(R.string.CurrentTemp1) + currentTemperature);
+            textViewMinTemperature.setText(getResources().getString(R.string.MinTemp1)  + minTemperature);
+            textViewMaxTemperature.setText(getResources().getString(R.string.MaxTemp1) + maxTemperature);
             imageViewWeather.setImageBitmap(weatherBitmap);
         }
 

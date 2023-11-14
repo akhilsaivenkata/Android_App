@@ -18,6 +18,12 @@
     <string name="MainAct">MainActivity</string>
     <string name="ListAct">ListItemsActivity</string>
     <string name="WeatherAct">WeatherForecastActivity</string>
+    <string name="CurrentTemp">Current Temperature: 25°C</string>
+    <string name="MinTemp">Min Temperature: 20°C</string>
+    <string name="MaxTemp">Max Temperature: 30°C</string>
+    <string name="CurrentTemp1">Current Temperature: </string>
+    <string name="MinTemp1">Min Temperature: </string>
+    <string name="MaxTemp1">Max Temperature: </string>
     <string name="Toolbar">Test toolbar</string>
     <string name="forecastBtn">Weather Forecast</string>
     <string name="ToolDialog">Do you want to go back?</string>
