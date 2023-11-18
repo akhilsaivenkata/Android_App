@@ -53,7 +53,6 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
 
-        Log.i("gate","1");
         toolbarSai = findViewById(R.id.toolBarSai);
         setSupportActionBar(toolbarSai);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -86,7 +85,6 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Log.i("yippi",String.valueOf(id));
-                Log.i("gate","2");
                 showMsgsDetails(msgsSai.get(position), id);
             }
         });
@@ -99,7 +97,6 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
             public void onClick(View view) {
                 // Get the text from the EditText field
                 String message = editTextMsg.getText().toString().trim();
-                Log.i("gate","3");
 
 
                 if (!message.isEmpty()) {
@@ -125,7 +122,6 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
                 null, null, null, null, null);
 
         if (cursor != null) {
-            Log.i("gate","4");
 
             // Printing the column name
             for (int i = 0; i < cursor.getColumnCount(); i++) {
@@ -149,7 +145,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.i("gate","5");
+
         // Retrieve the selected message and its ID
         String msgSelected = msgsSai.get(position);
         long msgIdSelected = msgsid.get(position);
@@ -165,7 +161,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     }
 
     private void showDetailsFragment(String message, long msgsid) {
-        Log.i("gate","6");
+
         // Create a new instance of your MessageDetailsFragment
         MessageFragment detailsFragment = MessageFragment.newInstance(message, msgsid);
 
@@ -177,7 +173,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     }
 
     private void startDetailsActivity(String msg, long msgsId) {
-        Log.i("gate","7");
+
         Intent intent = new Intent(this, MessageDetails.class);
         intent.putExtra("message", msg);
         intent.putExtra("messageId", msgsId);
@@ -189,11 +185,11 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (item.getItemId() == android.R.id.home) {
-            Log.i("gate","7.5");
+
             onBackPressed();
             return true;
         }
-        Log.i("gate","7.6");
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -207,19 +203,19 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
         }
 
         public int getCount() {
-            Log.i("gate","8");
+
             return msgsSai.size();
         }
 
         @Override
         public String getItem(int position) {
-            Log.i("gate","9");
+
             return msgsSai.get(position);
         }
 
 
         public long getItemId(int position) {
-            Log.i("gate","10");
+
             if(cursor==null){
                 Log.i("NUL","nulll");
             }
@@ -233,7 +229,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Log.i("gate","11");
+
 
             LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
             View result = null;
@@ -254,7 +250,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     }
 
     private void showMsgsDetails(String message, long msgId) {
-        Log.i("gate","12");
+
 
         if (ismobile()) {
             // If running on a phone, start a new activity
@@ -276,13 +272,13 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     }
 
     private boolean ismobile() {
-        Log.i("gate","13");
+
         // Check if the device is a phone (based on screen size, for example)
         return getResources().getBoolean(R.bool.is_mobile);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i("gate","14");
+
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_DETAILS && resultCode == RESULT_OK) {
             // Here I am handlng the result from the MessageDetailsActivity if at all its needed
@@ -300,7 +296,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     }
 
     private void deleteMessage(long messageId) {
-        Log.i("gate","15");
+
         // this method is for deleting the selected id from the msgs
         database.delete(ChatDatabaseHelper.TABLE_NAME, ChatDatabaseHelper.KEY_ID + " = ?", new String[]{String.valueOf(messageId)});
         msgsSai.remove(messageId);
@@ -308,8 +304,8 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     }
 
     private void updateListView() {
-        Log.i("gate","16");
-        //
+
+
         if (chatAdapter != null) {
             chatAdapter.notifyDataSetChanged();
         }
@@ -318,7 +314,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
 
     @Override
     protected void onDestroy() {
-        Log.i("gate","17");
+
         super.onDestroy();
 
         // I'm closing the database if it's open
