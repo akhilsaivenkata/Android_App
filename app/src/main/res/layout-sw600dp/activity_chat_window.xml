@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context=".ChatWindow">
+
+
+    <!-- ListView for chat messages -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarSai"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:background="#4CAF50"
+        android:orientation="horizontal"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/listViewSai"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSendSai"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="0dp" />
+
+    <!-- EditText for typing messages -->
+    <EditText
+        android:id="@+id/editTextMsgSai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/btnSendSai"
+        android:layout_weight="1"
+        android:hint="Please type the msg here" />
+
+    <!-- Send button -->
+    <Button
+        android:id="@+id/btnSendSai"
+        style="@style/AllBtoStyleSai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/Sendchey" />
+    <FrameLayout
+        android:id="@+id/FrameLayoutSai"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/listViewSai"
+        android:layout_toEndOf="@id/listViewSai">
+    </FrameLayout>
+
+</RelativeLayout>
