@@ -17,7 +17,7 @@ public class MessageDetails extends AppCompatActivity {
         String msgsSai = getIntent().getStringExtra("message");
         long msgsid = getIntent().getLongExtra("messageId", -1);
 
-        // Create a bundle to pass information to the fragment
+        // Here I am creating a bundle to pass information to the fragment
         Bundle bundle = new Bundle();
         bundle.putString("message", msgsSai);
         bundle.putLong("messageId", msgsid);

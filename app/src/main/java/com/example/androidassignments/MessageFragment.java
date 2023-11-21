@@ -43,9 +43,6 @@ public class MessageFragment extends Fragment {
         // Retrieve arguments passed to the fragment
         Bundle args = getArguments();
         if ( args!= null) {
-            //message = getArguments().getString(ARG_MESSAGE);
-            //messageId = getArguments().getLong(ARG_MESSAGE_ID);
-
 
             String message = args.getString(ARG_MESSAGE, "");
             long messageId = args.getLong(ARG_MESSAGE_ID, -1);
@@ -67,11 +64,11 @@ public class MessageFragment extends Fragment {
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Pass the message ID back to the calling activity
+                    // I'm passing the message ID back to the calling activity
                     Intent resultIntent = new Intent();
                     resultIntent.putExtra("deletedMessageId", messageId);
 
-                    // Set the result code to indicate that a message should be deleted
+
                     getActivity().setResult(Activity.RESULT_OK, resultIntent);
 
                     // Finish the activity
@@ -86,10 +83,7 @@ public class MessageFragment extends Fragment {
         return view;
     }
     private boolean isTablet() {
-        // Implement your logic to determine if the device is a tablet
-        // For example, you can check for screen size or other tablet-specific features
-        // Return true if it's a tablet, false otherwise
-        // Replace the following line with your own logic:
+
         return getResources().getBoolean(R.bool.is_tablet);
     }
 }

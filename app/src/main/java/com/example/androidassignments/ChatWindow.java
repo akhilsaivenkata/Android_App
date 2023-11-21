@@ -146,7 +146,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        // Retrieve the selected message and its ID
+        // Here retrieving the selected message and its ID
         String msgSelected = msgsSai.get(position);
         long msgIdSelected = msgsid.get(position);
         Log.i("gatgat",String.valueOf(msgIdSelected));
@@ -155,17 +155,17 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
             // Tablet layout with a screen width of at least 600dp
             showDetailsFragment(msgSelected, msgIdSelected);
         } else {
-            // Phone layout
+
             startDetailsActivity(msgSelected, msgIdSelected);
         }
     }
 
     private void showDetailsFragment(String message, long msgsid) {
 
-        // Create a new instance of your MessageDetailsFragment
+
         MessageFragment detailsFragment = MessageFragment.newInstance(message, msgsid);
 
-        // Start a FragmentTransaction to add the fragment to the FrameLayout
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.FrameLayoutSai, detailsFragment)
                 .addToBackStack(null)
@@ -195,7 +195,6 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
 
     protected class ChatAdapter extends ArrayAdapter<String> {
         private ArrayList<Long> msgsid;
-        //private Cursor cursor; // Added cursor as a class variable
 
         public ChatAdapter(Context ctx, int resource, ArrayList<String> data, ArrayList<Long> msgsid) {
             super(ctx, 0, data);
@@ -297,7 +296,7 @@ public class ChatWindow extends AppCompatActivity implements  AdapterView.OnItem
 
     private void deleteMessage(long messageId) {
 
-        // this method is for deleting the selected id from the msgs
+        // this is for deleting the selected id from the msgs list
         database.delete(ChatDatabaseHelper.TABLE_NAME, ChatDatabaseHelper.KEY_ID + " = ?", new String[]{String.valueOf(messageId)});
         msgsSai.remove(messageId);
 
