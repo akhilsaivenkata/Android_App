@@ -57,8 +57,8 @@ public class MessageFragment extends Fragment {
             TextView messageTextView = view.findViewById(R.id.textMessage);
             TextView idTextView = view.findViewById(R.id.textId);
 
-            messageTextView.setText(message);
-            idTextView.setText("ID: " + messageId);
+            messageTextView.setText(getResources().getString(R.string.chatmsg) +message);
+            idTextView.setText(getResources().getString(R.string.chatmsgid) + messageId);
 
 
 

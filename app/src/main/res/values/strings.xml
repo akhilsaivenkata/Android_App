@@ -35,6 +35,9 @@
     <string name="About">Version 1.0, by Sai Venkata Akhil</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="delbtn">Delete this message</string>
+    <string name="chatmsgid">ID: </string>
+    <string name="chatmsg">Message: </string>
     <string name="dialogMessage">Do you want to end this Activity?</string>
     <string name="dialogTitle">Attention</string>
     <string name="switchon">Switch is On</string>

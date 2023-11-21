@@ -36,6 +36,9 @@
     <string name="custdial">డైలాగ్ ఆన్ బుట్టోన్ 1</string>
     <string name="ok">ఓకే</string>
     <string name="cancel">కాన్సుల్</string>
+    <string name="delbtn">ఈ సందేశాన్ని తొలగించండి</string>
+    <string name="chatmsgid">ఈడి: </string>
+    <string name="chatmsg">సందేశం: </string>
     <string name="dialogMessage">ఆక్టివిటీ ఆపేయాల?</string>
     <string name="dialogTitle">గమనిక</string>
     <string name="switchon">స్విచ్ ఐస్ ఆన్</string>

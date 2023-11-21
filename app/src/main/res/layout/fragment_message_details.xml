@@ -8,7 +8,7 @@
         android:id="@+id/textMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message: "
+        android:text="@string/chatmsg"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textMessage"
-        android:text="ID: "
+        android:text="@string/chatmsgid"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
@@ -28,6 +28,6 @@
         android:layout_below="@id/textId"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="590dp"
-        android:text="Delete this message" />
+        android:text="@string/delbtn" />
 
 </RelativeLayout>
